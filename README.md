@@ -1,77 +1,37 @@
-PROCESSO DE SELEÇÃO DE ESTAGIÁRIOS PLANNER SISTEMAS 
----
+Módulos implementados:
+-CARGOS
+-FUNCIONÁRIOS
+-PROMOÇÕES
 
-PLANNER SISTEMAS E UMA EMPRESA ESPECIALIZADA EM BI E SOFTWARE DE PLANEJAMENTO ORÇAMENTÁRIO, ATUAMOS EM GRANDES CORPORAÇÕES NOS MAIS VARIADOS SETORES COMO, PLANO DE SAÚDE, INDÚSTRIAS, SEGURANÇA, DISTRIBUIDORAS E ETC.
+FUNCIONAMENTO:
+1.CARGO
+1.1.Navegar para menu de cadastro
+1.2.Selecionar CARGOS
+1.3.Selecionar NOVO, para efutuar o cadastro de um novo cargo
+1.4.Selecionar PESQUISA
+1.5.Selecionar PESQUISAR, verificando visualmente os cargos e seus atributos preeviamente cadastrados na tabela inferior
 
-TEMOS A CREDIBILIDADE COMO UMA DAS PRINCIPAIS CARACTERÍSTICAS DOS NOSSOS SERVIÇOS. 
+2.FUNCIONÁRIOS
+2.1.Navegar para menu de cadastro
+2.2.Selecionar FUNCIONARIOS
+2.3.Selecionar NOVO, para efutuar o cadastro de um novo funcionario
+2.4.Escolher o cargo do novo funcionario no Listbox baseado nos cargos já cadastrados anteriormente
+2.5.Selecionar PESQUISA
+2.6.Selecionar PESQUISAR, verificando visualmente os funcionários e seus atributos preeviamente cadastrados na tabela inferior.
 
-**TRABALHAMOS COM:**
-*  PRÁTICAS ÁGEIS COM KANBAN / SCRUM
-*  ESCALABILIDADE
-*  JAVAEE - CDI - TOMCAT - JPA/HIBERNATE
-*  SQL ANSI - SQL SERVER, ORACLE, MYSQL, POSTGRESQL
-*  GIT
-*  ENTRE OUTRAS TECNOLOGIAS
+3.PROMOÇÕES
+3.1.Navegar para menu de cadastro
+3.2.Selecionar PROMOÇÕES
+3.3.Selecionar um cargo no listbox, que apresentará os cargos previamente cadastrados
+3.4.Visualizar os funcionários que foram cadastrados nesses cargos específicos na tabela inferior
+3.5.Digitar o percentual de aumento de salário desejado para os funcionários deste cargo
+3.6.Selecionar CAUCULAR,verificando visualmente o aumento nos salários destes funcionários de acordo com o percentual indicado.
 
-VENHA FAZER PARTE DA NOSSA EQUIPE E NOS AJUDAR A ESCREVER O FUTURO
+4.GERAL
+-Nos 3 módulos os dados podem ser removidos e editados
 
+5.ARQUITETURA
+-A arquitetura de solução foi basicamente baseada nos módulos já apresentados no repositório, incluindo as soluções backEnd e frontEnd.
 
-COMO PARTICIPAR DA ESCOLHA DO ESTAGIÁRIO PLANNER
----
-
-* FAÇA UM "FORK" DESSE PROJETO PARA SUA CONTA GITHUB.
-* IMPLEMENTE O DESAFIO DESCRITO NO TÓPICO ABAIXO.
-* FAÇA UM PUSH PARA SEU REPOSITÓRIO COM O DESAFIO IMPLEMENTADO.
-* ENVIE UM EMAIL PARA RH@PLANNERSISTEMAS.COM.BR COM O ASSUNTO 'DESAFIO ESTAGIARIO PLANNER' E A URL DO SEU FORK.
-* AGUARDE NOSSO CONTATO.
-
-
-DESAFIO ESTAGIÁRIO PLANNER
----
-
-**ROTINA DE PROMOÇÃO**
-
-* SUA SOLUÇÃO DEVERÁ TER AS SEGUINTES TELAS:
-  * CADASTRO DE CARGO
-  * CADASTRO DE FUNCIONÁRIO
-  * APLICAÇÃO DE PROMOÇÃO
-  
-OBS:TODAS AS TELAS DEVERÃO SEGUIR O PADRÃO MVC
-
-**CADASTRO DE CARGO**
-
-TERÁ APENAS OS CAMPOS DE CÓDIGO, DESCRIÇÃO E UM DATATABLE LISTANDO TUDO QUE JA FOI CADASTRADO, CRUD BÁSICO.
-
-**CADASTRO DE FUNCIONÁRIO**
-
-TELA ONDE O USUÁRIO PODERÁ CADASTRAR E ALTERAR OS REGISTROS DE UM FUNCIONÁRIOS, DEVERÁ TER UM *DATATABLE* LISTANDO TUDO QUE FOI CADASTRADO E OS SEGUINTES CAMPOS PARA *INPUT*:
-*  NOME
-*  MATRICULA
-*  CARGO
-*  SALÁRIO
-
-**APLICAÇÃO DE PROMOÇÃO**
-
-ESSA TELA DEVERÁ TER UM *LISTBOX* COM TODOS OS CARGOS CADASTRADOS, UM *INPUTTEXT* COM O *LABEL* 'PERCENTUAL DE AUMENTO' E UM BOTÃO CHAMADO 'CALCULAR', AO SELECIONAR UM CARGO NO *LISTBOX* O SISTEMA DEVERÁ POPULAR UM *DATATABLE* COM TODOS OS FUNCIONÁRIO CADASTRADOS COM O CARGO SELECIONADO, E AO CLICAR NO BOTÃO 'CALCULAR' O SISTEMA DEVE APLICAR O PERCENTUAL DIGITADO NO *INPUTTEXT* EM TODOS OS FUNCIONÁRIOS LISTADOS E ATUALIZAR O *DATATABLE* EXIBINDO O NOVO SALÁRIO.
-
-**TECNOLOGIAS A SEREM UTILIZADAS**
-
-* JAVAEE
-* TOMCAT
-* JPA/HIBERNATE COM BANCO HSQLDB
-* CDI
-* JSF COM PRIMEFACES
-
-**DOCUMENTAÇÃO**
-
-NO ARQUIVO README DO PROJETO EXPLIQUE O FUNCIONAMENTO E A ARQUITETURA DA SOLUÇÃO ADOTADA NA SUA IMPLEMENTAÇÃO. DESCREVA TAMBÉM OS PASSOS PARA EXECUTAR CORRETAMENTE SEU PROJETO.
-
-**AVALIAÇÃO**
-
-ENTRE OS CRITÉRIOS DE AVALIAÇÃO ESTÃO:
-
-* CÓDIGO LIMPO E ORGANIZAÇÃO
-* DOCUMENTAÇÃO DE CÓDIGO
-* DOCUMENTAÇÃO DO PROJETO (README)
-* BOAS PRÁTICAS DE DESENVOLVIMENTO
-
+6.OBSERVAÇÕES/COMENTÁRIOS
+-O considerei ao início o desafio levemente simples, mas levei algum tempo para implementa-lo por completo. Achei a implementação dos móculos já existentes interessante e pode aprender alguns bons conceitos no uso de filters e do projeto em geral.
