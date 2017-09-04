@@ -6,10 +6,7 @@ import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.planner.empresarial.model.Cargo;
 import com.planner.empresarial.model.Funcionario;
-import com.planner.empresarial.model.TipoPessoa;
-import com.planner.empresarial.repository.Cargos;
 import com.planner.empresarial.service.CadastroFuncionarioService;
 import com.planner.empresarial.util.jsf.FacesUtil;
 
@@ -18,7 +15,7 @@ import com.planner.empresarial.util.jsf.FacesUtil;
 public class CadastroFuncionarioBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Inject
 	private CadastroFuncionarioService cadastroFuncionarioService;
 
@@ -26,7 +23,6 @@ public class CadastroFuncionarioBean implements Serializable {
 
 	public CadastroFuncionarioBean() {
 		limpar();
-
 	}
 
 	private void limpar() {
@@ -36,7 +32,6 @@ public class CadastroFuncionarioBean implements Serializable {
 	public void salvar() {
 		this.funcionario = cadastroFuncionarioService.salvar(this.funcionario);
 		limpar();
-
 		FacesUtil.addInfoMessage("Funcionario salvo com sucesso!");
 	}
 

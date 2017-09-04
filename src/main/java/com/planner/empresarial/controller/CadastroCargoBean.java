@@ -23,7 +23,6 @@ public class CadastroCargoBean implements Serializable {
 
 	public CadastroCargoBean() {
 		limpar();
-
 	}
 
 	private void limpar() {
@@ -40,7 +39,7 @@ public class CadastroCargoBean implements Serializable {
 	public boolean isEditando() {
 		return cargo.getId() != null;
 	}
-
+	
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}

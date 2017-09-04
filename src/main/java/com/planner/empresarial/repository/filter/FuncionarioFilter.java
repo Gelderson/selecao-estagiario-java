@@ -2,8 +2,6 @@ package com.planner.empresarial.repository.filter;
 
 import java.io.Serializable;
 
-import com.planner.empresarial.model.Cargo;
-
 public class FuncionarioFilter implements Serializable{
 
 	private static final long serialVersionUID = 1L;

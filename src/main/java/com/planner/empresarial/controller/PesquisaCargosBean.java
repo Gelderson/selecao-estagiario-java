@@ -45,7 +45,7 @@ public class PesquisaCargosBean implements Serializable {
 	public List<Cargo> getCargos(){
 		return cargosFiltrados=cargos.filtrados(filtro);
 	}	
-			
+				
 	public CargoFilter getFiltro() {
 		return filtro;
 	}
