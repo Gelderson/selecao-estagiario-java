@@ -25,6 +25,7 @@ public class Cargo implements Serializable {
 	private String descricao;
 	private List<Funcionario> funcionarios;
 	
+	
 	@Id
 	@GeneratedValue
 	public Long getId() {

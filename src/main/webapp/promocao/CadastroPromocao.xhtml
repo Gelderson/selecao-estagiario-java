@@ -1,0 +1,93 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">APLICAÇÃO DE PROMOÇÃO</ui:define>
+
+	<ui:define name="corpo">
+	    
+		<h:form id="frmPesquisa">
+			<h1>APLICAÇÃO DE PROMOÇÃO</h1>
+
+			<p:messages autoUpdate="true" closable="true" />
+
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:commandButton value="Caucular"
+						action="#{cadastroAumentoBean.caucular}" update="@form" />
+				</p:toolbarGroup>
+				
+			</p:toolbar>
+
+			<p:panelGrid columns="2" id="painel"
+				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+				
+				<p:outputLabel value="PERCENTUAL DE AUMENTO" for="aumento" />
+				<p:inputText id="aumento" value="#{cadastroAumentoBean.aumento.quantidade}"
+					size="60" />
+				
+				<p:outputLabel value="Cargo" for="cargo" />
+				<p:selectOneMenu id="cargo" value="#{cadastroAumentoBean.aumento.cargo}">
+					<f:selectItem itemLabel="Selecione"/>
+					<f:selectItems value="#{pesquisaCargosBean.getCargos()}" var="cargo" 
+						itemValue="#{cargo}" itemLabel="#{cargo.nome}"/>
+						<p:ajax process="#{cargo.getFuncionarios()}" partialSubmit="true" event="valueChange"  update="@form"/>
+				</p:selectOneMenu>
+					
+			</p:panelGrid>
+
+			<p:dataTable id="funcionariosTable"
+				value="#{cadastroAumentoBean.aumento.cargo.getFuncionarios()}" var="funcionario"
+				style="margin-top: 20px" emptyMessage="Nenhum funcionario encontrado."
+				rows="20" paginator="true" paginatorAlwaysVisible="false"
+				paginatorPosition="bottom">
+
+
+				<p:column headerText="Nome" style="text-align: center; width: 100px">
+					<h:outputText value="#{funcionario.nome}" />
+				</p:column>
+
+				<p:column headerText="Salario">
+					<h:outputText value="#{funcionario.salario}" />
+				</p:column>
+				
+				<p:column headerText="Cargo">
+					<h:outputText value="#{funcionario.cargo.nome}" />
+				</p:column>
+
+				<p:column headerText="Matricula"
+					style="text-align: center; width: 150px">
+					<h:outputText value="#{funcionario.matricula}" />
+				</p:column>
+
+				<p:column style="width: 100px; text-align: center">
+					<p:button outcome="/funcionarios/CadastroFuncionario" icon="ui-icon-pencil"
+						title="Editar">
+						<f:param name="funcionario" value="#{funcionario.id}" />
+					</p:button>
+					<p:commandButton icon="ui-icon-trash" title="Excluir"
+						oncomplete="PF('confirmacaoExclusao').show()" process="@this"
+						update=":frmPesquisa:confirmacaoExclusaoDialog">
+						<f:setPropertyActionListener
+							target="#{pesquisaFuncionariosBean.funcionarioSelecionado}"
+							value="#{funcionario}" />
+					</p:commandButton>
+				</p:column>
+			</p:dataTable>
+
+			<p:confirmDialog header="Exclusão de funcionario"
+				message="Tem certeza que deseja excluir o funcionario #{pesquisaFuncionariosBean.funcionarioSelecionado.id}?"
+				widgetVar="confirmacaoExclusao" id="confirmacaoExclusaoDialog">
+				<p:button value="Não"
+					onclick="PF('confirmacaoExclusao').hide(); return false;" />
+				<p:commandButton value="Sim"
+					oncomplete="PF('confirmacaoExclusao').hide();"
+					action="#{pesquisaFuncionariosBean.excluir}" process="@this"
+					update=":frmPesquisa:funcionariosTable" />
+			</p:confirmDialog>
+		</h:form>
+	</ui:define>
+</ui:composition>

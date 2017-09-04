@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import javax.inject.Inject;
 
-import com.planner.empresarial.model.Cargo;
 import com.planner.empresarial.model.Funcionario;
-import com.planner.empresarial.repository.Cargos;
 import com.planner.empresarial.repository.Funcionarios;
 import com.planner.empresarial.util.jpa.Transactional;
 
